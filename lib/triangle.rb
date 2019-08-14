@@ -25,7 +25,6 @@ class Triangle
     triangle = [(lengthOne + lengthTwo > lengthThree), (lengthOne + lengthThree > lengthTwo), (lengthTwo + lengthThree > lengthOne)]
     [lengthOne, lengthTwo, lengthThree].each do |side|
       raise TriangleError if triangle.include?(false) || side <= 0
-      end
     end
   end 
   
