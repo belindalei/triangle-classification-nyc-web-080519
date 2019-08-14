@@ -19,7 +19,15 @@ class Triangle
     end
   end
   
+    real_triangle = [(a + b > c), (a + c > b), (b + c > a)]
+    [a, b, c].each do |side|
+      real_triangle << false if side <= 0 
+    raise TriangleError if real_triangle.include?(false)
+    end
+    
   def triangle?
+    #define a triangle 
+    #if triangle is false for the definition, raise Triangle Error 
     if lengthOne = 0 || lengthTwo = 0 || lengthThree = 0 
       raise TriangleError
     elsif lengthOne + lengthTwo < lengthThree && lengthThree + lengthOne < lengthTwo 
